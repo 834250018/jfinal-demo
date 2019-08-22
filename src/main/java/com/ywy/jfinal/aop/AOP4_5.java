@@ -1,9 +1,8 @@
-package com.ywy.jfinal.controller;
+package com.ywy.jfinal.aop;
 
 import com.jfinal.aop.Aop;
 import com.jfinal.aop.AopManager;
 import com.jfinal.aop.Inject;
-import com.jfinal.core.Controller;
 import com.ywy.jfinal.service.TestService;
 import com.ywy.jfinal.service.UserService;
 import com.ywy.jfinal.service.impl.UserServiceImpl;
@@ -12,7 +11,7 @@ import com.ywy.jfinal.service.impl.UserServiceImpl;
  * @author ve
  * @data 2019/8/13 18:24
  */
-public class Controller4_5 extends Controller {
+public class AOP4_5 {
 
     @Inject
     TestService testService;
@@ -24,7 +23,7 @@ public class Controller4_5 extends Controller {
     // Aop注入实现类
     static UserServiceImpl userServiceImpl = Aop.get(UserServiceImpl.class);
 
-    public void index() {
+    public void aop() {
         UserServiceImpl userServiceimpl = Aop.get(UserServiceImpl.class);
         Class<UserServiceImpl> userServiceImplClass = Aop.inject(UserServiceImpl.class);
 

@@ -1,47 +1,22 @@
 package com.ywy.jfinal.model;
 
 import com.jfinal.plugin.activerecord.Model;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author ve
  * @data 2019/8/13 18:24
  */
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class User extends Model<User> {
 
     private String id;
     private String name;
     private String realName;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getRealName() {
-        return realName;
-    }
-
-    public void setRealName(String realName) {
-        this.realName = realName;
-    }
-
-    public User() {
-    }
-
-    public User(String id, String name, String realName) {
-        this.id = id;
-        this.name = name;
-        this.realName = realName;
-    }
+    public static final User dao = new User().dao();
 }

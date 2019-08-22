@@ -5,6 +5,7 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
+import com.ywy.jfinal.aop.AOP4_5;
 import com.ywy.jfinal.controller.*;
 import com.ywy.jfinal.interceptor.MyInterceptor;
 import com.ywy.jfinal.model.User;
@@ -65,8 +66,7 @@ public class DemoConfig extends JFinalConfig {
                 .add("controller34", Controller3_4.class)
                 .add("controller35", Controller3_5.class)
                 .add("controller37", Controller3_7.class)
-                .add("controller310", Controller3_10.class)
-                .add("controller45", Controller4_5.class);
+                .add("controller310", Controller3_10.class);
     }
 
     @Override
@@ -76,6 +76,7 @@ public class DemoConfig extends JFinalConfig {
 
     @Override
     public void configPlugin(Plugins me) {
+        // 配置ActiveRecordPlugin
         final String url = "jdbc:mysql://127.0.0.1:3306/test";
         final String username = "root";
         final String password = "root";
@@ -101,12 +102,15 @@ public class DemoConfig extends JFinalConfig {
 
     @Override
     public void onStart() {
-        System.out.println("启动之前");
+        System.out.println("启动之后");
+
+        User user = new User().set("id", "id1").set("name", "小红").set("real_name", "翠花");
+        System.out.println();
     }
 
     @Override
     public void onStop() {
-        System.out.println("关闭之前");
+        System.out.println("关闭之后");
         // 可以做一些持久化操作
     }
 }
