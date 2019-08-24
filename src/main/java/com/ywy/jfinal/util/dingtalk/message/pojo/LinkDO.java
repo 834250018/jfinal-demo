@@ -1,4 +1,4 @@
-package com.ywy.jfinal.util.dingtalk;
+package com.ywy.jfinal.util.dingtalk.message.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,8 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class BtnDO {
+public class LinkDO {
     private String title;
-    private String actionURL;
+    private String messageURL;
+    private String picURL;
 }

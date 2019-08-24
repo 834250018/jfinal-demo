@@ -1,5 +1,8 @@
-package com.ywy.jfinal.util.dingtalk;
+package com.ywy.jfinal.util.dingtalk.message;
 
+import com.ywy.jfinal.util.dingtalk.message.pojo.BtnDO;
+import com.ywy.jfinal.util.dingtalk.base.BaseMsg;
+import com.ywy.jfinal.util.dingtalk.consts.DTTypeEnum;
 import lombok.Data;
 
 /**

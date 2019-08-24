@@ -1,4 +1,4 @@
-package com.ywy.jfinal.util.dingtalk;
+package com.ywy.jfinal.util.dingtalk.consts;
 
 /**
  * @author ve

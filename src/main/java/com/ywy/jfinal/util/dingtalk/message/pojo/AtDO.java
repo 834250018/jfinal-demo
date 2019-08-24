@@ -1,4 +1,4 @@
-package com.ywy.jfinal.util.dingtalk;
+package com.ywy.jfinal.util.dingtalk.message.pojo;
 
 import lombok.Data;
 

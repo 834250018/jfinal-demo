@@ -1,5 +1,8 @@
-package com.ywy.jfinal.util.dingtalk;
+package com.ywy.jfinal.util.dingtalk.message;
 
+import com.ywy.jfinal.util.dingtalk.message.pojo.AtDO;
+import com.ywy.jfinal.util.dingtalk.base.BaseMsg;
+import com.ywy.jfinal.util.dingtalk.consts.DTTypeEnum;
 import lombok.Data;
 
 /**
@@ -25,6 +28,7 @@ public class MarkdownMsg extends BaseMsg {
 
     /**
      * 不知道什么原因,无法@所有人
+     *
      * @param title
      * @param text
      * @param atAll
@@ -37,6 +41,7 @@ public class MarkdownMsg extends BaseMsg {
 
     /**
      * 需要在第二个参数包含 @手机号
+     *
      * @param title
      * @param text
      * @param atMobiles
