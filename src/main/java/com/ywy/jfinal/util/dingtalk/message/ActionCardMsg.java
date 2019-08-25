@@ -36,6 +36,14 @@ public class ActionCardMsg extends BaseMsg {
         actionCard.text = text;
     }
 
+    /**
+     *
+     * @param title
+     * @param text
+     * @param singleTitle
+     * @param singleURL 需要加协议,如http
+     * @return
+     */
     public static ActionCardMsg single(String title, String text, String singleTitle, String singleURL) {
         ActionCardMsg actionCardMsg = new ActionCardMsg(title, text);
         actionCardMsg.actionCard.singleTitle = singleTitle;
@@ -43,6 +51,13 @@ public class ActionCardMsg extends BaseMsg {
         return actionCardMsg;
     }
 
+    /**
+     *
+     * @param title
+     * @param text
+     * @param btns 请求路径需要加协议,如http
+     * @return
+     */
     public static ActionCardMsg btns(String title, String text, BtnDO... btns) {
         ActionCardMsg actionCardMsg = new ActionCardMsg(title, text);
         actionCardMsg.actionCard.btns = btns;

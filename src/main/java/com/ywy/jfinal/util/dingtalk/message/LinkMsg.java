@@ -21,10 +21,23 @@ public class LinkMsg extends BaseMsg {
         private String picUrl;
     }
 
+    /**
+     *
+     * @param title
+     * @param text
+     * @param messageUrl 需要加协议,如http
+     */
     public LinkMsg(String title, String text, String messageUrl) {
         init(title, text, messageUrl);
     }
 
+    /**
+     *
+     * @param title
+     * @param text
+     * @param messageUrl 需要加协议,如http
+     * @param picUrl
+     */
     public LinkMsg(String title, String text, String messageUrl, String picUrl) {
         init(title, text, messageUrl);
         link.picUrl = picUrl;

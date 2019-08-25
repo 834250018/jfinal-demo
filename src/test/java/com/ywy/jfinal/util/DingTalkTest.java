@@ -18,7 +18,8 @@ public class DingTalkTest {
 
     @Test
     public void testTextMsg() throws Exception {
-        String str = new TextMsg("测试发送消息").sendTo(DingTalkConsts.MY_ROBOT_TOKEN+"fdsfa");
+        String str = new TextMsg("测试发送消息", true).toJson();
+//        String str = new TextMsg("测试发送消息").sendTo(DingTalkConsts.MY_ROBOT_TOKEN+"fdsfa");
 //            String str1 =new TextMsg("测试发送消息", true).sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
 //            String str2 =new TextMsg("测试发送消息", "17307539790").sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
 //            System.out.println(str);
@@ -31,8 +32,8 @@ public class DingTalkTest {
     public void testLinkMsg() throws Exception {
         Map headers = new HashMap<String, String>();
         headers.put("Content-Type", "application/json");
-        String str = new LinkMsg("标题", "主题", "toUrl").sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
-        String str1 = new LinkMsg("标题", "主题", "toUrl", "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2599059047,3703734503&fm=58&w=258&h=258&img.GIF").sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
+        String str = new LinkMsg("标题", "主题", "http://www.baidu.com").sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
+        String str1 = new LinkMsg("标题", "主题", "http://www.baidu.com", "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2599059047,3703734503&fm=58&w=258&h=258&img.GIF").sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
         System.out.println(str);
         System.out.println(str1);
     }
@@ -46,11 +47,12 @@ public class DingTalkTest {
 //                    "    检验必须参数是否齐全\n" +
 //                    "\n" +
 //                    "**方法体**").sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
-        String str1 = new MarkdownMsg("标题", "主题", true).sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
-        String str2 = new MarkdownMsg("标题", "主题@17307539790", new String[]{"17307539790"}).sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
+        String str1 = new MarkdownMsg("标题", "主题@17307539790", true).toJson();
+//        String str1 = new MarkdownMsg("标题", "主题@17307539790", true).sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
+//        String str2 = new MarkdownMsg("标题", "主题@17307539790", new String[]{"17307539790"}).sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
 //            System.out.println(str);
         System.out.println(str1);
-        System.out.println(str2);
+//        System.out.println(str2);
     }
 
     @Test
@@ -62,9 +64,9 @@ public class DingTalkTest {
 //                    "    检验必须参数是否齐全\n" +
 //                    "\n" +
 //                    "**方法体**").sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
-        BtnDO btnDO = new BtnDO("按钮1", "www.baidu.com");
-        BtnDO btnDO1 = new BtnDO("按钮2", "www.google.com");
-        String str1 = ActionCardMsg.single("标题", "主题", "sing查看所有", "www.baidu.com").sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
+        BtnDO btnDO = new BtnDO("按钮1", "http://www.baidu.com");
+        BtnDO btnDO1 = new BtnDO("按钮2", "http://www.google.com");
+        String str1 = ActionCardMsg.single("标题", "主题", "sing查看所有", "http://www.baidu.com").sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
         String str2 = ActionCardMsg.btns("标题", "主题@17307539790", btnDO, btnDO1).sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
 //            System.out.println(str);
         System.out.println(str1);
@@ -75,8 +77,8 @@ public class DingTalkTest {
     public void testFeedCardMsg() throws Exception {
         Map headers = new HashMap<String, String>();
         headers.put("Content-Type", "application/json");
-        LinkDO Link = new LinkDO("标题1", "www.baidu.com", "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2599059047,3703734503&fm=58&w=258&h=258&img.GIF");
-        LinkDO Link1 = new LinkDO("标题2", "www.google.com", "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2599059047,3703734503&fm=58&w=258&h=258&img.GIF");
+        LinkDO Link = new LinkDO("标题1", "http://www.baidu.com", "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2599059047,3703734503&fm=58&w=258&h=258&img.GIF");
+        LinkDO Link1 = new LinkDO("标题2", "http://www.google.com", "https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2599059047,3703734503&fm=58&w=258&h=258&img.GIF");
         String str = new FeedCardMsg(Link, Link1, Link1).sendTo(DingTalkConsts.MY_ROBOT_TOKEN);
         System.out.println(str);
     }

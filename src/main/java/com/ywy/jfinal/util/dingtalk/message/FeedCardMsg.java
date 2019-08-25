@@ -19,6 +19,10 @@ public class FeedCardMsg extends BaseMsg {
         private LinkDO[] links;
     }
 
+    /**
+     *
+     * @param links 请求路径需要加协议,如http
+     */
     public FeedCardMsg(LinkDO... links) {
         setMsgtype(DTTypeEnum.feedCard);
         feedCard.links = links;
