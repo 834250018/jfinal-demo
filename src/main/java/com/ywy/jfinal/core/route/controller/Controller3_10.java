@@ -1,4 +1,4 @@
-package com.ywy.jfinal.controller;
+package com.ywy.jfinal.core.route.controller;
 
 import com.jfinal.core.Controller;
 import com.jfinal.upload.UploadFile;

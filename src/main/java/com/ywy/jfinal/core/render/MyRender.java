@@ -1,4 +1,4 @@
-package com.ywy.jfinal.render;
+package com.ywy.jfinal.core.render;
 
 import com.jfinal.render.ContentType;
 import com.jfinal.render.Render;
@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
+ * 自定义渲染类,可以对渲染进行深度定制
  * @author ve
  * @data 2019/8/13 18:24
  */

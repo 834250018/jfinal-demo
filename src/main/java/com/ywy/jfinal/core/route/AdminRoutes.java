@@ -1,9 +1,9 @@
-package com.ywy.jfinal.route;
+package com.ywy.jfinal.core.route;
 
 import com.jfinal.config.Routes;
-import com.ywy.jfinal.controller.AdminController;
-import com.ywy.jfinal.controller.UserController;
-import com.ywy.jfinal.interceptor.AdminInterceptor;
+import com.ywy.jfinal.core.aop.AdminInterceptor;
+import com.ywy.jfinal.core.route.controller.AdminController;
+import com.ywy.jfinal.core.route.controller.UserController;
 
 /**
  * @author ve

@@ -1,8 +1,8 @@
-package com.ywy.jfinal.route;
+package com.ywy.jfinal.core.route;
 
 import com.jfinal.config.Routes;
-import com.ywy.jfinal.controller.BlogController;
-import com.ywy.jfinal.controller.IndexController;
+import com.ywy.jfinal.core.route.controller.BlogController;
+import com.ywy.jfinal.core.route.controller.IndexController;
 
 /**
  * @author ve

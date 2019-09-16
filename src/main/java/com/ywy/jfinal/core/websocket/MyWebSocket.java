@@ -1,4 +1,4 @@
-package com.ywy.jfinal.websocket;
+package com.ywy.jfinal.core.websocket;
 
 import javax.websocket.OnMessage;
 import javax.websocket.Session;

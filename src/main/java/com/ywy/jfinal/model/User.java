@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * @author ve
  * @data 2019/8/13 18:24
@@ -12,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class User extends Model<User> {
+public class User extends Model<User> implements Serializable {
 
     private String id;
     private String name;

@@ -1,8 +1,8 @@
-package com.ywy.jfinal.controller;
+package com.ywy.jfinal.core.route.controller;
 
 import com.jfinal.core.ActionKey;
 import com.jfinal.core.NotAction;
-import com.ywy.jfinal.controller.base.BaseController;
+import com.ywy.jfinal.core.route.controller.base.BaseController;
 
 /**
  * @author ve

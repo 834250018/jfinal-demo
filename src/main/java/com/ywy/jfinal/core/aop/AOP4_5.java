@@ -1,4 +1,4 @@
-package com.ywy.jfinal.aop;
+package com.ywy.jfinal.core.aop;
 
 import com.jfinal.aop.Aop;
 import com.jfinal.aop.AopManager;

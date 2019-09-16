@@ -5,12 +5,13 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
-import com.ywy.jfinal.aop.AOP4_5;
-import com.ywy.jfinal.controller.*;
-import com.ywy.jfinal.interceptor.MyInterceptor;
+import com.ywy.jfinal.core.route.*;
+import com.ywy.jfinal.core.aop.MyHandler;
+import com.ywy.jfinal.core.aop.AdminInterceptor;
+import com.ywy.jfinal.core.aop.MyInterceptor;
+import com.ywy.jfinal.core.aop.ResponseInterceptor;
+import com.ywy.jfinal.core.route.controller.*;
 import com.ywy.jfinal.model.User;
-import com.ywy.jfinal.route.AdminRoutes;
-import com.ywy.jfinal.route.FrontRoutes;
 
 /**
  * @author ve
@@ -40,7 +41,7 @@ public class DemoConfig extends JFinalConfig {
                     // 配置 Listener
 //                    builder.addListener("com.abc.MyListener");
 
-                    builder.addWebSocketEndpoint("com.ywy.jfinal.websocket.MyWebSocket");
+                    builder.addWebSocketEndpoint("com.ywy.jfinal.core.websocket.MyWebSocket");
                 })
                 .start();
     }
@@ -92,17 +93,19 @@ public class DemoConfig extends JFinalConfig {
     public void configInterceptor(Interceptors me) {
         // 配置全局拦截器
         me.add(new MyInterceptor());
+        me.add(new AdminInterceptor());
+        me.add(new ResponseInterceptor());
     }
 
     @Override
     public void configHandler(Handlers me) {
         // 配置适配器
-//        me.add(new MyHandler());
+        me.add(new MyHandler());
     }
 
     @Override
     public void onStart() {
-        System.out.println("启动之后");
+        System.out.println("启动完成");
 
         User user = new User().set("id", "id1").set("name", "小红").set("real_name", "翠花");
         System.out.println();

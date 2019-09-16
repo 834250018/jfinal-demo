@@ -1,4 +1,4 @@
-package com.ywy.jfinal.controller.base;
+package com.ywy.jfinal.core.route.controller.base;
 
 import com.jfinal.core.Controller;
 

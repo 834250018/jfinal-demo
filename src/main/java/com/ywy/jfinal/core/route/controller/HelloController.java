@@ -1,9 +1,10 @@
-package com.ywy.jfinal.controller;
+package com.ywy.jfinal.core.route.controller;
 
 import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;
-import com.jfinal.core.NotAction;
 import com.jfinal.core.paragetter.Para;
+import com.ywy.jfinal.exception.BusErrorEnum;
+import com.ywy.jfinal.exception.BusException;
 import com.ywy.jfinal.model.User;
 
 /**
@@ -29,23 +30,20 @@ public class HelloController extends Controller {
         renderText("Hello t1(/login)");
     }
 
-    @NotAction
-    public void test2() {
-        renderText("");
-    }
-
-    @NotAction
-    public void test3() {
-        renderText("");
-    }
-
-    @NotAction
     public void test4() {
-        renderText("");
+        throw new NullPointerException();
     }
 
-    @NotAction
     public void test5() {
-        renderText("");
+        throw new BusException(BusErrorEnum.CODE_123);
     }
+
+    public void test6() {
+        throw new BusException(BusErrorEnum.CODE_124, "测试异常额外消息");
+    }
+
+    public void test7() {
+        renderJson(new User("ff", "dd", "dd").set("id", "bb"));
+    }
+
 }

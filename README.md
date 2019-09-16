@@ -62,5 +62,7 @@ HelloController.class
 ```
 localhost/hello
 ```
-注意,启动本项目需要mysql:localhost:3306 root root
+注意:
+* 1.启动本项目需要mysql:localhost:3306 root root
 且需要一个test数据库,有一个user表字段为id name real_name
+* 2.或者注释掉DemoConfig.java中的configPlugin中的所有内容
