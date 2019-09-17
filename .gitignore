@@ -4,6 +4,7 @@
 /build/resources
 /build/tmp
 /out/
+/target/
 *.class
 !gradle/wrapper/gradle-wrapper.jar
 !build/libs/Dockerfile

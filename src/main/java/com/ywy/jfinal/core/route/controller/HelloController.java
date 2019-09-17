@@ -43,7 +43,7 @@ public class HelloController extends Controller {
     }
 
     public void test7() {
-        renderJson(new User("ff", "dd", "dd").set("id", "bb"));
+        renderJson(new User().set("id", "bb"));
     }
 
 }

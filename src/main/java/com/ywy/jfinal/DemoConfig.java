@@ -1,6 +1,7 @@
 package com.ywy.jfinal;
 
 import com.jfinal.config.*;
+import com.jfinal.json.MixedJsonFactory;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
@@ -53,6 +54,8 @@ public class DemoConfig extends JFinalConfig {
 
         // 开启对超类的注入.不开启时可以在超类中通过Aop.get(...)进行注入
         me.setInjectSuperClass(true);
+        // 配置使用MixedJson
+        me.setJsonFactory(new MixedJsonFactory());
     }
 
     @Override
