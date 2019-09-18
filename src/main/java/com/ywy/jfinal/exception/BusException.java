@@ -9,12 +9,12 @@ import lombok.Data;
 @Data
 public class BusException extends RuntimeException {
 
-    public BusException(BusErrorEnum errorCode) {
+    public BusException(BusErrorCode errorCode) {
         code = errorCode.getCode();
         msg = errorCode.getMsg();
     }
 
-    public BusException(BusErrorEnum errorCode, String appendMsg) {
+    public BusException(BusErrorCode errorCode, String appendMsg) {
         code = errorCode.getCode();
         msg = errorCode.getMsg() + " : " + appendMsg;
     }

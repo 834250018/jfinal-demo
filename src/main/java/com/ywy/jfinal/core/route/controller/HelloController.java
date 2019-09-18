@@ -3,7 +3,7 @@ package com.ywy.jfinal.core.route.controller;
 import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;
 import com.jfinal.core.paragetter.Para;
-import com.ywy.jfinal.exception.BusErrorEnum;
+import com.ywy.jfinal.exception.BusErrorCode;
 import com.ywy.jfinal.exception.BusException;
 import com.ywy.jfinal.model.User;
 
@@ -35,11 +35,11 @@ public class HelloController extends Controller {
     }
 
     public void test5() {
-        throw new BusException(BusErrorEnum.CODE_123);
+        throw new BusException(BusErrorCode.CODE_123);
     }
 
     public void test6() {
-        throw new BusException(BusErrorEnum.CODE_124, "测试异常额外消息");
+        throw new BusException(BusErrorCode.CODE_124, "测试异常额外消息");
     }
 
     public void test7() {
