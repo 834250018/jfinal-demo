@@ -6,11 +6,12 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
-import com.ywy.jfinal.core.route.*;
-import com.ywy.jfinal.core.aop.MyHandler;
 import com.ywy.jfinal.core.aop.AdminInterceptor;
-import com.ywy.jfinal.core.aop.MyInterceptor;
+import com.ywy.jfinal.core.aop.MyHandler;
+import com.ywy.jfinal.core.aop.ParamsInterceptor;
 import com.ywy.jfinal.core.aop.ResponseInterceptor;
+import com.ywy.jfinal.core.route.AdminRoutes;
+import com.ywy.jfinal.core.route.FrontRoutes;
 import com.ywy.jfinal.core.route.controller.*;
 import com.ywy.jfinal.model.User;
 
@@ -95,9 +96,12 @@ public class DemoConfig extends JFinalConfig {
     @Override
     public void configInterceptor(Interceptors me) {
         // 配置全局拦截器
-        me.add(new MyInterceptor());
-        me.add(new AdminInterceptor());
+        // 响应拦截器优先
         me.add(new ResponseInterceptor());
+        // 权限拦截器
+        me.add(new AdminInterceptor());
+        // 参数校验拦截器
+        me.add(new ParamsInterceptor());
     }
 
     @Override
@@ -112,6 +116,7 @@ public class DemoConfig extends JFinalConfig {
 
         User user = new User().set("id", "id1").set("name", "小红").set("real_name", "翠花");
         System.out.println();
+
     }
 
     @Override
