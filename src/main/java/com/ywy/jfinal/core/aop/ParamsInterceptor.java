@@ -5,7 +5,9 @@ import com.jfinal.aop.Invocation;
 import com.jfinal.core.Controller;
 import com.jfinal.core.paragetter.Para;
 import com.jfinal.kit.StrKit;
+import com.ywy.jfinal.annotation.Email;
 import com.ywy.jfinal.annotation.NotBlank;
+import com.ywy.jfinal.annotation.Pattern;
 import com.ywy.jfinal.annotation.Valid;
 import com.ywy.jfinal.exception.BusErrorCode;
 import com.ywy.jfinal.exception.BusException;
@@ -34,6 +36,22 @@ public class ParamsInterceptor implements Interceptor {
         if (NotBlank.class.equals(annotation.annotationType())) {
             if (value == null || value.toString().length() == 0) {
                 throw new BusException(BusErrorCode.CODE_400, paramName + ((NotBlank) annotation).message());
+            }
+        } else if (Pattern.class.equals(annotation.annotationType())) {
+            if (value == null) {
+                throw new BusException(BusErrorCode.CODE_400, paramName);
+            }
+            String regex = ((Pattern) annotation).regexp();
+            if (!value.toString().matches(regex)) {
+                throw new BusException(BusErrorCode.CODE_400, paramName + ((Pattern) annotation).message());
+            }
+        } else if (Email.class.equals(annotation.annotationType())) {
+            if (value == null) {
+                throw new BusException(BusErrorCode.CODE_400, paramName);
+            }
+            String regex = "^[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$";
+            if (!value.toString().matches(regex)) {
+                throw new BusException(BusErrorCode.CODE_400, paramName + ((Email) annotation).message());
             }
         }
     }
