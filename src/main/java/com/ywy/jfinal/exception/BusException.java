@@ -28,8 +28,8 @@ public class BusException extends RuntimeException {
     }
 
     // 业务异常不打印堆栈
-    @Override
-    public synchronized Throwable fillInStackTrace() {
-        return this;
-    }
+//    @Override
+//    public synchronized Throwable fillInStackTrace() {
+//        return this;
+//    }
 }

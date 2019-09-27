@@ -4,6 +4,7 @@ import com.jfinal.core.Controller;
 import com.jfinal.core.paragetter.Para;
 import com.ywy.jfinal.annotation.NotBlank;
 import com.ywy.jfinal.annotation.Valid;
+import com.ywy.jfinal.dto.AnnotationTestDTO;
 import com.ywy.jfinal.dto.TestDTO;
 import com.ywy.jfinal.dto.UserCreateDTO;
 import com.ywy.jfinal.dto.UserRemoveDTO;
@@ -22,10 +23,21 @@ public class Controller3_3 extends Controller {
         renderText("此方法是一个action");
     }
 
-    public void test2(@NotBlank String gg,
-                      @Valid @Para("") UserCreateDTO userCreateDTO,
-                      @Valid @Para("") UserRemoveDTO userRemoveDTO,
-                      @NotBlank String ii) {
+    //@Para("") String bb // 使用Para映射参数不能传入空串""
+    public void test2(
+            @NotBlank(message = "校验不通过") @Para("aa1") String aa,
+            @NotBlank String cc,
+            @Valid UserCreateDTO userCreateDTO,
+            @Valid @Para("tttaa") UserCreateDTO tttt,
+            @Valid @Para("") UserRemoveDTO userRemoveDTO
+    ) {
+        renderText("此方法是一个action");
+    }
+    public void test3(
+            @Valid AnnotationTestDTO aaa
+//            @Valid @Para("tttaa") AnnotationTestDTO bbb,
+//            @Valid @Para("") AnnotationTestDTO ccc
+    ) {
         renderText("此方法是一个action");
     }
 
