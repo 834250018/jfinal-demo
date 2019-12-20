@@ -82,7 +82,7 @@ public class DemoConfig extends JFinalConfig {
     @Override
     public void configPlugin(Plugins me) {
         // 配置ActiveRecordPlugin
-        final String url = "jdbc:mysql://127.0.0.1:3306/test";
+        /*final String url = "jdbc:mysql://127.0.0.1:3306/test";
         final String username = "root";
         final String password = "root";
         DruidPlugin dp = new DruidPlugin(url, username, password);
@@ -90,7 +90,7 @@ public class DemoConfig extends JFinalConfig {
 
         ActiveRecordPlugin arp = new ActiveRecordPlugin(dp);
         arp.addMapping("user", User.class);
-        me.add(arp);
+        me.add(arp);*/
     }
 
     @Override
