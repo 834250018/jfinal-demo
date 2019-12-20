@@ -1,4 +1,4 @@
 FROM openjdk:8
 ADD jfinal-demo-release.zip /app.zip
 RUN unzip app.zip
-CMD ["/jfinal-demo/jfinal.sh","start"]
+ENTRYPOINT ["/bin/bash", "/jfinal-demo/jfinal.sh","start"]
