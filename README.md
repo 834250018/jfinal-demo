@@ -67,6 +67,17 @@ JFinal 是基于Java 语言的极速 web 开发框架，其核心设计目标是
 * 1.启动本项目需要mysql:localhost:3306 root root
 且需要一个test数据库,有一个user表字段为id name real_name
 * 2.或者注释掉DemoConfig.java中的configPlugin中的所有内容
+    ```
+	Jenkins 基于docker自动构建job
+	rm -rf build
+	mkdir build
+	cp target/jfinal-demo-release.zip build/jfinal-demo-release.zip
+	cp -f Dockerfile build/Dockerfile
+	docker rm -f demo
+	docker rmi demo
+	docker build -t demo build
+	docker run -u root -itd --name demo --restart=always -p 8078:80 demo
+    ```
 
 ### 日志
 ` 2019/9/27 整理了一个检验参数的拦截器,模仿jsr303,当前仅有一个NotBlank,具体看Controller3_3`
