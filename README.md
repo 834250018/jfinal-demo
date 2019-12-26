@@ -69,6 +69,7 @@ JFinal 是基于Java 语言的极速 web 开发框架，其核心设计目标是
 * 2.或者注释掉DemoConfig.java中的configPlugin中的所有内容
     ```
 	Jenkins 基于docker自动构建job
+	// todo 更新工作空间的代码
 	rm -rf build
 	mkdir build
 	cp target/jfinal-demo-release.zip build/jfinal-demo-release.zip
