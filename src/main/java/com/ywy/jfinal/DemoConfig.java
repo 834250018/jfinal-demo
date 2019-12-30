@@ -43,7 +43,7 @@ public class DemoConfig extends JFinalConfig {
                     // 配置 Listener
 //                    builder.addListener("com.abc.MyListener");
 
-                    builder.addWebSocketEndpoint("com.ywy.jfinal.core.websocket.MyWebSocket");
+//                    builder.addWebSocketEndpoint("com.ywy.jfinal.core.websocket.MyWebSocket");
                 })
                 .start();
     }
