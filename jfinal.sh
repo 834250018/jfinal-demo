@@ -18,7 +18,6 @@
 # --------------------------------------------------------------
 
 # 启动入口类，该脚本文件用于别的项目时要改这里
-BUILD_ID=demo
 MAIN_CLASS=com.ywy.jfinal.DemoConfig
 
 if [[ "$MAIN_CLASS" == "com.yourpackage.YourMainClass" ]]; then
