@@ -1,7 +1,7 @@
 # 热部署
 undertow.devMode=false
 undertow.port=8077
-undertow.host=0.0.0.0
+# undertow.host=0.0.0.0
 # undertow.resourcePath = src/main/java, classpath:static
 
 # io 线程数与 worker 线程数,建议使用默认配置
